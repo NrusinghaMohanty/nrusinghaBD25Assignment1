@@ -244,7 +244,8 @@ const sortByPopularity = (value1, value2) => {
 app.get('/products/sort/popularity',(req, res) => {
   let productsCopy = products.slice()
   productsCopy.sort(sortByPopularity)
-  res.json(productsCopy)
+  // res.json(productsCopy)
+  res.json({ products: productsCopy })
 })
 
 
@@ -256,7 +257,8 @@ const sortByPriceDesending = (value1, value2) => {
 app.get('/products/sort/price-high-to-low',(req, res) => {
   let productsCopy = products.slice()
   productsCopy.sort(sortByPriceDesending)
-  res.json(productsCopy)
+  // res.json(productsCopy)
+  res.json({ products: productsCopy })
 })
 
 
@@ -268,7 +270,8 @@ const sortByPriceAscending = (value1, value2) => {
 app.get('/products/sort/price-low-to-high',(req, res) => {
   let productsCopy = products.slice()
   productsCopy.sort(sortByPriceAscending)
-  res.json(productsCopy)
+  // res.json(productsCopy)
+  res.json({ products: productsCopy })
 })
 
 

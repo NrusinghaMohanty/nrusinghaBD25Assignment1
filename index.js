@@ -242,10 +242,9 @@ const sortByPopularity = (value1, value2) => {
 }
 
 app.get('/products/sort/popularity',(req, res) => {
-  let productsCopy = products.slice()
-  productsCopy.sort(sortByPopularity)
-  // res.json(productsCopy)
-  res.json({ products: productsCopy })
+  let sortedProducts = products.slice()
+  sortedProducts.sort(sortByPopularity)
+  res.json({ products: sortedProducts })
 })
 
 
@@ -255,10 +254,9 @@ const sortByPriceDesending = (value1, value2) => {
 }
 
 app.get('/products/sort/price-high-to-low',(req, res) => {
-  let productsCopy = products.slice()
-  productsCopy.sort(sortByPriceDesending)
-  // res.json(productsCopy)
-  res.json({ products: productsCopy })
+  let sortedProducts = products.slice()
+  sortedProducts.sort(sortByPriceDesending)
+  res.json({ products: sortedProducts })
 })
 
 
@@ -268,10 +266,9 @@ const sortByPriceAscending = (value1, value2) => {
 }
 
 app.get('/products/sort/price-low-to-high',(req, res) => {
-  let productsCopy = products.slice()
-  productsCopy.sort(sortByPriceAscending)
-  // res.json(productsCopy)
-  res.json({ products: productsCopy })
+  let sortedProducts = products.slice()
+  sortedProducts.sort(sortByPriceAscending)
+  res.json({ products: sortedProducts })
 })
 
 
@@ -282,8 +279,8 @@ const filterByRam = (value, ram) => {
 
 app.get('/products/filter/ram',(req, res) => {
   let ram = parseFloat(req.query.ram);
-  let result = products.filter((value) => filterByRam(value, ram))
-  res.json(result)
+  let filteredProducts = products.filter((value) => filterByRam(value, ram))
+  res.json(filteredProducts)
 })
 
 
@@ -294,8 +291,8 @@ const filterByRom = (value, rom) => {
 
 app.get('/products/filter/rom',(req, res) => {
   let rom = parseFloat(req.query.rom);
-  let result = products.filter((value) => filterByRom(value, rom))
-  res.json(result)
+  let filteredProducts = products.filter((value) => filterByRom(value, rom))
+  res.json(filteredProducts)
 })
 
 
@@ -306,8 +303,8 @@ const filterByBrand = (value, brand) => {
 
 app.get('/products/filter/brand',(req, res) => {
   let brand = req.query.brand;
-  let result = products.filter((value) => filterByBrand(value, brand))
-  res.json(result)
+  let filteredProducts = products.filter((value) => filterByBrand(value, brand))
+  res.json(filteredProducts)
 })
 
 
@@ -318,8 +315,8 @@ const filterByOs = (value, os) => {
 
 app.get('/products/filter/os',(req, res) => {
   let os = req.query.os;
-  let result = products.filter((value) => filterByOs(value, os))
-  res.json(result)
+  let filteredProducts = products.filter((value) => filterByOs(value, os))
+  res.json(filteredProducts)
 })
 
 
@@ -330,8 +327,8 @@ const filterByPrice = (value, price) => {
 
 app.get('/products/filter/price',(req, res) => {
   let price = parseFloat(req.query.price);
-  let result = products.filter((value) => filterByPrice(value, price))
-  res.json(result)
+  let filteredProducts = products.filter((value) => filterByPrice(value, price))
+  res.json(filteredProducts)
 })
 
 
